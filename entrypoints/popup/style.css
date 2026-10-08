@@ -1,0 +1,183 @@
+/**
+ * The action popup.
+ *
+ * The palette mirrors the in-page panel (`components/styles.ts`); the selectors
+ * are plain because the popup is its own document and needs none of the shadow
+ * root isolation. `light-dark()` plus the `data-theme` attribute that
+ * `main.tsx` sets covers all three theme preferences without repeating a token
+ * block per preference.
+ */
+
+:root {
+  color-scheme: light dark;
+  --qt-bg: light-dark(#ffffff, #1e1e22);
+  --qt-fg: light-dark(#1b1b1f, #f4f4f5);
+  --qt-muted: light-dark(#6b7280, #a1a1aa);
+  --qt-border: light-dark(#e4e4e7, #3f3f46);
+  --qt-hover: light-dark(#f4f4f5, #2c2c33);
+  --qt-accent: light-dark(#1d4ed8, #7dd3fc);
+  --qt-accent-fg: light-dark(#ffffff, #0c1424);
+  --qt-error: light-dark(#b91c1c, #fca5a5);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+body {
+  width: 320px;
+  margin: 0;
+  color: var(--qt-fg);
+  background: var(--qt-bg);
+  font: 400 13px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.qt-app {
+  display: flex;
+  flex-direction: column;
+}
+
+.qt-header {
+  padding: 12px 14px 10px;
+}
+
+.qt-heading {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.qt-hint {
+  margin: 4px 0 0;
+  color: var(--qt-muted);
+}
+
+.qt-kbd {
+  padding: 1px 4px;
+  background: var(--qt-hover);
+  border: 1px solid var(--qt-border);
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.qt-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--qt-border);
+}
+
+.qt-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.qt-label {
+  color: var(--qt-muted);
+}
+
+.qt-input {
+  width: 100%;
+  padding: 4px 6px;
+  color: inherit;
+  background: var(--qt-bg);
+  border: 1px solid var(--qt-border);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.qt-input-small {
+  width: auto;
+  flex: 1 1 auto;
+}
+
+.qt-units {
+  color: var(--qt-muted);
+}
+
+.qt-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.qt-check input {
+  margin: 3px 0 0;
+}
+
+.qt-note {
+  margin: 0;
+  color: var(--qt-muted);
+}
+
+.qt-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.qt-bar {
+  height: 4px;
+  overflow: hidden;
+  background: var(--qt-hover);
+  border-radius: 2px;
+}
+
+.qt-bar-fill {
+  height: 100%;
+  background: var(--qt-accent);
+  transition: width 120ms linear;
+}
+
+.qt-button {
+  align-self: flex-start;
+  padding: 4px 10px;
+  color: var(--qt-accent-fg);
+  background: var(--qt-accent);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.qt-button:hover {
+  filter: brightness(1.08);
+}
+
+.qt-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--qt-border);
+}
+
+.qt-footer .qt-button {
+  color: var(--qt-fg);
+  background: var(--qt-hover);
+  border-color: var(--qt-border);
+  white-space: nowrap;
+}
+
+.qt-status {
+  flex: 1 1 auto;
+  margin: 0;
+  color: var(--qt-muted);
+  font-size: 11px;
+}
+
+.qt-status-bad {
+  color: var(--qt-error);
+}
+
+.qt-loading {
+  margin: 0;
+  padding: 14px;
+  color: var(--qt-muted);
+}

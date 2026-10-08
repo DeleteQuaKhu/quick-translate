@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quick Translate</title>
+  </head>
+  <body>
+    <!--
+      Never visible to the user: this document only hosts the on-device models
+      (Translator, LanguageDetector) and the reading helpers, neither of which
+      can run in a service worker.
+    -->
+    <script type="module" src="./offscreen/main.ts"></script>
+  </body>
+</html>

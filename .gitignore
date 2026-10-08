@@ -1,0 +1,22 @@
+# dependencies
+node_modules
+
+# WXT build output and generated types
+.wxt
+.output
+stats.html
+
+# build artefacts
+*.zip
+
+# scratch files used while pinning third-party library APIs and checking builds
+_probe*.mjs
+_probe*.out.txt
+_*.txt
+
+# editors / os
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea
