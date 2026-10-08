@@ -9,6 +9,10 @@ stats.html
 # build artefacts
 *.zip
 
+# the kuromoji dictionary is downloaded by `npm run dict:ja`, ~17 MB
+# (see public/kuromoji-dict/README.md)
+public/kuromoji-dict/*.dat.gz
+
 # scratch files used while pinning third-party library APIs and checking builds
 _probe*.mjs
 _probe*.out.txt
